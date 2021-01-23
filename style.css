@@ -89,7 +89,9 @@ header h1#logo {
     background: #fff;
     padding: 1.5rem 2rem;
     border-radius: 0.25rem;
+
     margin-bottom: 2rem;
+
     color: var(--dark-blue);
 }
 
@@ -114,6 +116,12 @@ header h1#logo {
 }
 
 /* === TABLE ===*/
+
+#transactions {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+}
 
 #data-table {
     width: 100%;
@@ -171,4 +179,19 @@ footer {
     padding: 4rem 0 2rem;
     color: var(--dark-blue);
     opacity: 0.6;
+}
+
+/* === RESPONSIVE ===*/
+
+@media (min-width: 800px) {
+    html {
+        font-size: 87.5%;
+    }
+
+    #balance {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
 }
