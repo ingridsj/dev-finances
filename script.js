@@ -51,11 +51,14 @@ const DOM = {
     },
     
     innerHTMLTransaction(transaction) {
+        const CSSclass = transaction.amount > 0 ? "income" : "expense"
+
+        //const amount = 
 
         const html = `
         
             <td class="description">${transaction.description}</td>
-            <td class="expense">${transaction.amount}</td>
+            <td class="${CSSclass}">${transaction.amount}</td>
             <td class="date">${transaction.date}</td>
             <td><img src="./assets/minus.svg" alt="Remover Transação"></td>
         
@@ -64,4 +67,12 @@ const DOM = {
     }
 }
 
-DOM.addTransaction(transactions[0])
+const Utils = {
+    formatCurrency(value){
+        
+    }
+}
+
+transactions.forEach(function(transaction){
+    DOM.addTransaction(transaction)
+})
