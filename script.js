@@ -28,10 +28,16 @@ const transactions = [{
 ]
 
 const Transaction = {
+    all:transactions,
+
+    add(transaction){
+        Transaction.all.push(transaction)
+    },
+
     incomes() { //somar as entradas
         let income = 0
 
-        transactions.forEach(transaction => {
+        Transaction.all.forEach(transaction => {
             if( transaction.amount > 0){
                 income += transaction.amount
             }
@@ -39,10 +45,11 @@ const Transaction = {
 
         return income
     },
+
     expenses() { // somar as saídas
         let expense = 0
 
-        transactions.forEach(transaction => {
+        Transaction.all.forEach(transaction => {
             if( transaction.amount < 0){
                 expense += transaction.amount
             }
@@ -51,6 +58,7 @@ const Transaction = {
         return expense
 
     },
+
     total() { // entradas menos as saídas
         return Transaction.incomes() + Transaction.expenses()
     }
@@ -114,3 +122,10 @@ transactions.forEach(function(transaction){
 })
 
 DOM.updateBalance()
+
+Transaction.add({
+    id: 39,
+    description: 'Alo',
+    amount: 200,
+    date: '23/01/2021'
+})
