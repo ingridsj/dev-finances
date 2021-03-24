@@ -203,6 +203,10 @@ table td {
 	background: #fff;
 }
 
+table td img {
+	cursor: pointer;
+}
+
 td.description {
 	color: var(--dark-blue);
 }
@@ -268,7 +272,7 @@ td.expense {
 
 }
 
-.input-group small {
+.input-group .help {
 	opacity: 0.4;
 }
 
