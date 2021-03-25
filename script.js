@@ -1,9 +1,11 @@
 const Modal = {
 	open() {
 		document.querySelector('.modal-overlay').classList.add('active')
+		document.querySelector('.footer').classList.add('footer-hidden')
 	},
 	close() {
 		document.querySelector('.modal-overlay').classList.remove('active')
+		document.querySelector('.footer').classList.remove('footer-hidden')
 	}
 }
 
